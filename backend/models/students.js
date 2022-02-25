@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
+
+      Skill:{
+        type: DataTypes.STRING(45),
+        allowNull: false
+      },
       Location: {
         type: DataTypes.STRING(45),
         allowNull: false,
