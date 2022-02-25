@@ -28,7 +28,7 @@ class Home extends Component {
                 <div class="mb-3 row">
                     <label for="staticEmail" class="col-sm-1 col-form-label">Email</label>
                 <div class="col-sm-10">
-                <input id="username-input" type="text" name="username" readonly class="form-control-plaintext" value={this.state.username} onChange={this.handleOnChange} placeholder="Enter Username" />
+                <input id="username-input" type="text" name="username" readonly class="form-control-plaintext" value={this.state.username} onChange={this.handleOnChange} placeholder="Enter Username/Email" />
                 </div>
                  </div>
                 <div class="mb-3 row">
