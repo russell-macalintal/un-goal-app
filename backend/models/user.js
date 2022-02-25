@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         Password: {
-            type: DataTypes.INTEGER(5).UNSIGNED,
+            type: DataTypes.STRING,
             allowNull: false
         },
         Location: {

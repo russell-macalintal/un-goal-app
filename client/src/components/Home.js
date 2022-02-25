@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { submitLogin, submitLogout } from '../actions/loginActions';
 
 class Home extends Component {
     state = {
@@ -9,7 +11,7 @@ class Home extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-
+        this.props.submitLogin(this.state);
     }
 
     handleOnChange = (event) => {
@@ -46,4 +48,18 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        userId: state.userId,
+        username: state.username
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        submitLogin: user => dispatch(submitLogin(user)),
+        submitLogout: () => dispatch(submitLogout())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
