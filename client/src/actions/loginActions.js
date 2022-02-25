@@ -1,4 +1,4 @@
-USERS_URL = '';
+var USERS_URL = '';
 
 export function submitLogin(user) {
     return (dispatch) => {

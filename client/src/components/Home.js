@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { submitLogin, submitLogout } from '../actions/loginActions';
+import '../App.css'
 
 class Home extends Component {
     state = {
@@ -24,30 +25,27 @@ class Home extends Component {
     render() {
         return(
             <div className="home">
-                <div>APPLICATION NAME</div>
-                <form onSubmit={this.handleOnSubmit}>
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-1 col-form-label">Email</label>
-                <div class="col-sm-10">
-                <input id="username-input" type="text" name="username" readonly class="form-control-plaintext" value={this.state.username} onChange={this.handleOnChange} placeholder="Enter Username/Email" />
-                </div>
-                 </div>
-                <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-1 col-form-label">Password</label>
-                <div class="col-sm-10">
-                 <input type="password" class="form-control" id="password-input" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Enter Password" />
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Login</button>
-                 </div>
-                    </div>
-                    
-                </form>
-                <Link to='/registration' >Not Registered? Click Here!</Link>
+                <div class="container">
 
-                <div>
-                    <p>Logged in User Info: {this.props.username}</p>
+                <form class="form-signin" onSubmit={this.handleOnSubmit} >
+                 <h2 class="form-signin-heading">Please sign in</h2>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input id="username-input" type="text" name="username" class="form-control" value={this.state.username} onChange={this.handleOnChange} placeholder="Enter Username/Email" required autofocus />
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="password-input" name="password" class="form-control" onChange={this.handleOnChange} value={this.state.password} placeholder="Enter Password" required />
+                 <div class="checkbox">
+  
                 </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                
+                </form>
+                <div class='not-registered'>
+                <Link to='/registration' >Not Registered? Click Here!</Link>                
+                </div>
+                </div>
+
+
             </div>
         )
     }
