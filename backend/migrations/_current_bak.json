@@ -1,0 +1,17 @@
+{
+    "tables": {
+        "test": {
+            "tableName": "test",
+            "schema": {
+                "idtest": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "idtest",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
