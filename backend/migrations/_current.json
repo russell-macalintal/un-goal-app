@@ -1,0 +1,67 @@
+{
+    "tables": {
+        "test": {
+            "tableName": "test",
+            "schema": {
+                "idtest": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "idtest",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "UserId": {
+                    "allowNull": false,
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "UserId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "FirstName": {
+                    "allowNull": false,
+                    "field": "FirstName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "LastName": {
+                    "allowNull": false,
+                    "field": "LastName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "location": {
+                    "allowNull": false,
+                    "field": "location",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "points": {
+                    "allowNull": false,
+                    "field": "points",
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "createdAt": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 2
+}
