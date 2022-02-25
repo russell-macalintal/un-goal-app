@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { submitLogin, submitLogout } from '../actions/loginActions';
 
-USERS_URL = '';
-
 class Home extends Component {
     state = {
         username: "",
