@@ -8,6 +8,42 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+//view user profile
+router.get('/profile/:id', authService.verifyUser, function(req, res, next) {
+  if (!req.isAuthenticated()) {
+     return res.send('You are not authenticated');
+  }
+  if (req.params.id !== String(req.user.UserId)) {
+    res.send('This is not your profile');
+  } else {
+    res.render('profile', {
+      FirstName: req.user.FirstName,
+      LastName: req.user.LastName,
+      Email: req.user.Email,
+      UserId: req.user.UserId,
+      Username: req.user.Username,
+    });
+  }
+});
+
+router.get('/profile', function (req, res, next) {
+  let token = req.cookies.jwt;
+  if (token) {
+    authService.verifyUser(token)
+      .then(user => {
+        if (user) {
+          res.send(JSON.stringify(user));
+        } else {
+          res.status(401);
+          res.send('Invalid authentication token');
+        }
+      });
+  } else {
+    res.status(401);
+    res.send('Must be logged in');
+  }
+});
+
 // Create new user if one doesn't exist
 router.post('/signup', function(req, res, next) {
   models.user
