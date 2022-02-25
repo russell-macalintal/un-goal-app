@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { submitLogin, submitLogout } from '../actions/loginActions';
 
 USERS_URL = '';
 
@@ -9,26 +10,9 @@ class Home extends Component {
         password: ""
     }
 
-    submitLogin = (user) => {
-        configObj = {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json',
-                'Accept':'application/json'
-            },
-            body: JSON.stringify(user)
-        };
-
-        fetch(USERS_URL, configObj)
-            .then(response => response.json())
-            .then(user_obj => {
-                return 
-            })
-    }
-
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.submitLogin(this.state);
+        this.props.submitLogin(this.state);
     }
 
     handleOnChange = (event) => {
@@ -58,4 +42,11 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => {
+    return {
+        submitLogin: user => dispatch(submitLogin(user)),
+        submitLogout: () => dispatch(submitLogout())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
