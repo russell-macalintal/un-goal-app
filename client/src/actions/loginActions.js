@@ -4,7 +4,7 @@ export function submitLogin(user) {
     return (dispatch) => {
         dispatch( {type: 'SUBMITTING'} );
         
-        configObj = {
+        const configObj = {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',
@@ -23,5 +23,7 @@ export function submitLogin(user) {
 }
 
 export function submitLogout() {
-
+    return {
+        type: 'RESET_USER'
+    }
 }
