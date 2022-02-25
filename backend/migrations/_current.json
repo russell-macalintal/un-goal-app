@@ -55,7 +55,7 @@
                 "Password": {
                     "allowNull": false,
                     "field": "Password",
-                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
+                    "seqType": "Sequelize.STRING"
                 },
                 "Location": {
                     "allowNull": false,
@@ -91,5 +91,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 4
 }
