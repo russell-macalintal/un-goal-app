@@ -1,23 +1,35 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  var student = sequelize.define(
-    "student",
+  var location = sequelize.define(
+    "location",
     {
-      StudentId: {
+      locationId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      FirstName: {
+      Name: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      LastName: {
+      classSize: {
+        type: DataTypes.INTEGER(5).UNSIGNED,
+        allowNull: false,
+      },
+      classAge: {
+        type: DataTypes.INTEGER(5).UNSIGNED,
+        allowNull: false,
+      }, // this one need to be a range so maybe not as integer
+      Address: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      Location: {
+      Subject: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+      timeNeeded: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
@@ -25,10 +37,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
-      },
-      Email: {
-        type: DataTypes.STRING,
-        unique: true,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -38,5 +46,5 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
 
-  return student;
+  return location;
 };
