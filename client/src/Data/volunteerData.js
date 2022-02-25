@@ -5,7 +5,9 @@ const volunteer = [
     subject: 'Spelling',
     location: 'New York, NY',
     time: '5 pm',
-    schedule: 'Friday, April 20 meeting with Doug'
+    schedule: 'Friday, April 20 meeting with Doug',
+    image:
+      'https://www.d181.org/uploaded/Schools/Schools_Photos/walker-school_edited_edited.jpeg',
   },
   {
     id: 2,
@@ -13,7 +15,8 @@ const volunteer = [
     subject: 'Spelling',
     location: 'New York, NY',
     time: '5 pm',
-    schedule: 'Friday, April 20 meeting with Doug'
+    schedule: 'Friday, April 20 meeting with Doug',
+   
   },
   {
     id: 3,
@@ -21,7 +24,7 @@ const volunteer = [
     subject: 'Math',
     location: 'New York, NY',
     time: '5 pm',
-    schedule: 'Friday, April 20 meeting with Doug'
+    schedule: 'Friday, April 20 meeting with Doug',
   },
   {
     id: 4,
@@ -29,7 +32,7 @@ const volunteer = [
     subject: 'Spelling',
     location: 'New York, NY',
     time: '5 pm',
-    schedule: 'Friday, April 20 meeting with Doug'
+    schedule: 'Friday, April 20 meeting with Doug',
   },
 ];
 
