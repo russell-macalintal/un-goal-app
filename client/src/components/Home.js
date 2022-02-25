@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+USERS_URL = '';
 
 class Home extends Component {
     state = {
@@ -12,8 +15,15 @@ class Home extends Component {
             headers: {
                 'Content-Type':'application/json',
                 'Accept':'application/json'
-            }
-        }
+            },
+            body: JSON.stringify(user)
+        };
+
+        fetch(USERS_URL, configObj)
+            .then(response => response.json())
+            .then(user_obj => {
+                return 
+            })
     }
 
     handleOnSubmit = (event) => {
@@ -41,4 +51,11 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        userId: state.userId,
+        username: state.username
+    }
+}
+
+export default connect(mapStateToProps)(Home);
