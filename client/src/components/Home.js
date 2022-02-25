@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { submitLogin, submitLogout } from '../actions/loginActions';
+
+USERS_URL = '';
 
 class Home extends Component {
     state = {
@@ -6,19 +10,9 @@ class Home extends Component {
         password: ""
     }
 
-    submitLogin = (user) => {
-        configObj = {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json',
-                'Accept':'application/json'
-            }
-        }
-    }
-
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.submitLogin(this.state);
+        this.props.submitLogin(this.state);
     }
 
     handleOnChange = (event) => {
@@ -41,4 +35,18 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        userId: state.userId,
+        username: state.username
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        submitLogin: user => dispatch(submitLogin(user)),
+        submitLogout: () => dispatch(submitLogout())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
