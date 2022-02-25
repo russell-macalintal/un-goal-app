@@ -6,9 +6,19 @@ class Home extends Component {
         password: ""
     }
 
+    submitLogin = (user) => {
+        configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+                'Accept':'application/json'
+            }
+        }
+    }
+
     handleOnSubmit = (event) => {
         event.preventDefault();
-
+        this.submitLogin(this.state);
     }
 
     handleOnChange = (event) => {
