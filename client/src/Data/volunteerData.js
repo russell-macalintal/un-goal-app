@@ -2,30 +2,34 @@ const volunteer = [
   {
     id: 1,
     name: 'susan smith',
-    subject: 'web developer',
+    subject: 'Spelling',
     location: 'New York, NY',
     time: '5 pm',
+    schedule: 'Friday, April 20 meeting with Doug'
   },
   {
     id: 2,
     name: 'anna johnson',
-    subject: 'web designer',
+    subject: 'Spelling',
     location: 'New York, NY',
     time: '5 pm',
+    schedule: 'Friday, April 20 meeting with Doug'
   },
   {
     id: 3,
     name: 'peter jones',
-    subject: 'intern',
+    subject: 'Math',
     location: 'New York, NY',
     time: '5 pm',
+    schedule: 'Friday, April 20 meeting with Doug'
   },
   {
     id: 4,
     name: 'Kay Anderson',
-    subject: 'spelling',
+    subject: 'Spelling',
     location: 'New York, NY',
     time: '5 pm',
+    schedule: 'Friday, April 20 meeting with Doug'
   },
 ];
 
