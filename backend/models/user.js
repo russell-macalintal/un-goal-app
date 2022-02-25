@@ -9,6 +9,14 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER
         },
+        Username: {
+            type: DataTypes.STRING,
+            unique: true
+        },
+        Email: {
+            type: DataTypes.STRING,
+            unique: true
+        },
         FirstName: {
             type: DataTypes.STRING(45),
             allowNull: false
@@ -17,12 +25,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(45),
             allowNull: false
         },
-        location: {
+        Skill: {
             type: DataTypes.STRING(45),
             allowNull: false
         },
-        points:{
+        Points: {
             type: DataTypes.INTEGER(5).UNSIGNED,
+            allowNull: false
+        },
+        Password: {
+            type: DataTypes.INTEGER(5).UNSIGNED,
+            allowNull: false
+        },
+        Location: {
+            type: DataTypes.STRING(45),
             allowNull: false
         },
         updatedAt:{
@@ -33,6 +49,11 @@ module.exports = (sequelize, DataTypes) => {
         createdAt:{
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+        },
+        Admin: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     },
     {}

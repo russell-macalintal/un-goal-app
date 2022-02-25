@@ -22,6 +22,16 @@
                     "field": "UserId",
                     "seqType": "Sequelize.INTEGER"
                 },
+                "Username": {
+                    "unique": true,
+                    "field": "Username",
+                    "seqType": "Sequelize.STRING"
+                },
+                "Email": {
+                    "unique": true,
+                    "field": "Email",
+                    "seqType": "Sequelize.STRING"
+                },
                 "FirstName": {
                     "allowNull": false,
                     "field": "FirstName",
@@ -32,15 +42,25 @@
                     "field": "LastName",
                     "seqType": "Sequelize.STRING(45)"
                 },
-                "location": {
+                "Skill": {
                     "allowNull": false,
-                    "field": "location",
+                    "field": "Skill",
                     "seqType": "Sequelize.STRING(45)"
                 },
-                "points": {
+                "Points": {
                     "allowNull": false,
-                    "field": "points",
+                    "field": "Points",
                     "seqType": "Sequelize.INTEGER(5).UNSIGNED"
+                },
+                "Password": {
+                    "allowNull": false,
+                    "field": "Password",
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
+                },
+                "Location": {
+                    "allowNull": false,
+                    "field": "Location",
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "updatedAt": {
                     "allowNull": false,
@@ -58,10 +78,18 @@
                     },
                     "field": "createdAt",
                     "seqType": "Sequelize.DATE"
+                },
+                "Admin": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": false
+                    },
+                    "field": "Admin",
+                    "seqType": "Sequelize.BOOLEAN"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 3
 }
