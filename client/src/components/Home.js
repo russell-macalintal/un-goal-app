@@ -11,7 +11,8 @@ class Home extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.submitLogin(this.state);
+        let user = this.state;
+        this.props.submitLogin(user);
     }
 
     handleOnChange = (event) => {
@@ -43,6 +44,10 @@ class Home extends Component {
                     
                 </form>
                 <Link to='/registration' >Not Registered? Click Here!</Link>
+
+                <div>
+                    <p>Logged in User Info: {this.props.username}</p>
+                </div>
             </div>
         )
     }

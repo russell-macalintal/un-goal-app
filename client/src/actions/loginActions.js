@@ -16,7 +16,7 @@ export function submitLogin(user) {
         fetch(USERS_URL, configObj)
             .then(response => response.json())
             .then(user_obj => {
-                return dispatch ({type: 'SET_USER', user_obj})
+                return dispatch ({type: 'SET_USER', action: user_obj})
             });
     }
 

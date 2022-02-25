@@ -12,7 +12,8 @@ export default function userReducer(state = {username: "", userId: "", submittin
                 userId: action.userId,
                 submitting: false
             };
-        case "REMOVE_USER":
+
+        case "RESET_USER":
             return {
                 ...state,
                 username: "",
