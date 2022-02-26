@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Calender from './components/Calender';
 import Registration from './components/Registration';
 import Dashbord from './components/Dashbord';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/calender" element={<Calender />} />
