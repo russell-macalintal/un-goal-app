@@ -7,7 +7,7 @@ const SignUp = () => {
         <div class="container">
           <div class="signup-content">
             <form method="POST" id="signup-form" class="signup-form">
-              <h2 class="form-title">Create account</h2>
+              <h2 class="form-title">Sign Up Here!</h2>
               <div class="form-group">
                 <input
                   type="text"
@@ -41,16 +41,6 @@ const SignUp = () => {
               </div>
               <div class="form-group">
                 <input
-                  type="password"
-                  class="form-input"
-                  name="re_password"
-                  id="re_password"
-                  placeholder="Repeat your password"
-                />
-              </div>
-
-              <div class="form-group">
-                <input
                   type="submit"
                   name="submit"
                   id="submit"
@@ -59,12 +49,6 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p class="loginhere">
-              Have already an account ?{' '}
-              <a href="/" class="loginhere-link">
-                Login here
-              </a>
-            </p>
           </div>
         </div>
       </section>
