@@ -1,30 +1,73 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react';
+import {Link } from 'react-router-dom'
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import data from '../Data/studentData'
+function Dashboard() {
+  const [people, setPeople] = useState(data);
+  const [index, setIndex] = useState(0);
 
-const Dashbord = () => {
-    const [students, setStudents] = useState(data)
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, people]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 7000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
+
   return (
-    <main>
-      <section className="container">
-        <>
-          {students.map((person) => {
-            const { id, name, location, image, time, subject } = person;
-            return (
-              <article key={id} className="person">
-                <img src={image} alt={name} />
-                <div>
-                  <h4>{name}</h4>
-                  <h4>{location}</h4>
-                  <p>{subject}</p>
-                </div>
-                  <button className='btn'>Sign Up</button>
-              </article>
-            );
-          })}
-        </>
-      </section>
-    </main>
+    <section className="section">
+      <div className="title">
+        <h2>
+          <span>/</span>Jobs
+        </h2>
+      </div>
+      <div className="section-center">
+        {people.map((person, personIndex) => {
+          const { id, image, name, subject, location, time } = person;
+
+          let position = 'nextSlide';
+          if (personIndex === index) {
+            position = 'activeSlide';
+          }
+          if (
+            personIndex === index - 1 ||
+            (index === 0 && personIndex === people.length - 1)
+          ) {
+            position = 'lastSlide';
+          }
+
+          return (
+            <article className={position} key={id}>
+              <img src={image} alt={name} className="person-img" />
+              <h4>{name}</h4>
+              <p className="text">{location}</p>
+              <p className="title">{name}</p>
+              <p className="title">{subject}</p>
+              <p className="title">{time}</p>
+              <Link className='btn btn-primary' to={'/signup'}>Sign Up</Link>
+            </article>
+          );
+        })}
+        <button className="prev" onClick={() => setIndex(index - 1)}>
+          <FiChevronLeft />
+        </button>
+        <button className="next" onClick={() => setIndex(index + 1)}>
+          <FiChevronRight />
+        </button>
+      </div>
+    </section>
   );
 }
 
-export default Dashbord
+export default Dashboard;

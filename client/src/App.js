@@ -6,7 +6,8 @@ import Profile from './components/Profile';
 import Calender from './components/Calender';
 import Registration from './components/Registration';
 import Dashbord from './components/Dashbord';
-import Home from './components/Home';
+import Home from './components/Home'
+import SignUp from './components/SignUp';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/calender" element={<Calender />} />
           <Route exact path="/jobs" element={<Dashbord />} />
+          <Route exact path="/signup" element={<SignUp />} />
         </Routes>
       </Router>
     </div>
