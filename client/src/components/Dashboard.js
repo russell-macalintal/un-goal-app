@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import data from '../Data/studentData'
 function Dashboard() {
@@ -29,7 +29,7 @@ function Dashboard() {
     <section className="section">
       <div className="title">
         <h2>
-          <span>/</span>Jobs
+          <span>Available Jobs</span>
         </h2>
       </div>
       <div className="section-center">

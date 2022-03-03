@@ -1,28 +1,28 @@
 const students = [
   {
     id: 1,
-    name: 'susan smith',
-    subject: 'Spellingr',
-    location: ' Hosmer Middle School, New York, NY',
-    time: '5 pm',
+    name: 'Susan Smith',
+    subject: 'Spelling',
+    location: 'Hosmer Middle School, New York, NY',
+    time: '5PM-6PM',
     image:
       'https://www.d181.org/uploaded/Schools/Schools_Photos/walker-school_edited_edited.jpeg',
   },
   {
     id: 2,
-    name: 'anna johnson',
+    name: 'Anna Johnson',
     subject: 'Spelling',
-    location: ' Hosmer Middle School, New York, NY',
-    time: '5 pm',
+    location: 'Hosmer Middle School, New York, NY',
+    time: '4PM-5PM',
     image:
       'https://www.d181.org/uploaded/Schools/Schools_Photos/walker-school_edited_edited.jpeg',
   },
   {
     id: 3,
-    name: 'peter jones',
+    name: 'Peter Jones',
     subject: 'Math',
-    location: ' Hosmer Middle School, New York, NY',
-    time: '5 pm',
+    location: 'Hosmer Middle School, New York, NY',
+    time: '6PM-7PM',
     image:
       'https://www.d181.org/uploaded/Schools/Schools_Photos/walker-school_edited_edited.jpeg',
   },
@@ -30,8 +30,8 @@ const students = [
     id: 4,
     name: 'Kay Anderson',
     subject: 'Spelling',
-    location: ' Hosmer Middle School, New York, NY',
-    time: '5 pm',
+    location: 'Hosmer Middle School, New York, NY',
+    time: '5PM-6PM',
     image:
       'https://www.d181.org/uploaded/Schools/Schools_Photos/walker-school_edited_edited.jpeg',
   },
