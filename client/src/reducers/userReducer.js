@@ -12,7 +12,7 @@ export default function userReducer(state = {Username: "", UserId: "", submittin
                 UserId: action.UserId,
                 submitting: false
             };
-        case "REMOVE_USER":
+        case "RESET_USER":
             return {
                 ...state,
                 Username: "",

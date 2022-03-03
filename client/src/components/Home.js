@@ -30,7 +30,7 @@ class Home extends Component {
                 <form class="form-signin" onSubmit={this.handleOnSubmit} >
                  <h2 class="form-signin-heading">Please sign in</h2>
                 <label for="inputEmail" class="sr-only">Email address</label>
-                <input id="username-input" type="text" name="username" class="form-control" value={this.state.username} onChange={this.handleOnChange} placeholder="Enter Username/Email" required autofocus />
+                <input id="username-input" type="text" name="username" class="form-control" value={this.state.username} onChange={this.handleOnChange} placeholder="Enter Email" required autofocus />
 
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="password-input" name="password" class="form-control" onChange={this.handleOnChange} value={this.state.password} placeholder="Enter Password" required />

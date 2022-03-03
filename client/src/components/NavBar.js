@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   return (
     <nav>
-      <h3>Application Name</h3>
+      <h1>VOLUN-TEACH</h1>
       <ul className="nav-Links">
         <Link style={{ color: 'white' }} to="/">
-          <li>Home</li>
+          <h3>HOME</h3>
         </Link>
         <Link style={{ color: 'white' }} to="/profile">
-          <li>Profile</li>
+          <h3>PROFILE</h3>
         </Link>
         <Link style={{ color: 'white' }} to="/calender">
-          <li>Calender</li>
+          <h3>CALENDAR</h3>
         </Link>
         <Link style={{ color: 'white' }} to="/jobs">
-          <li>Jobs</li>
+          <h3>JOBS</h3>
         </Link>
       </ul>
     </nav>
